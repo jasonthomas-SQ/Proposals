@@ -262,369 +262,6 @@
       transition: transform var(--transition), opacity var(--transition);
     }
 
-    /* ─── Before / After ────────────────────────────────────────────────── */
-    .syn-beforeafter {
-      background:
-        linear-gradient(rgba(8,16,36,0.82), rgba(8,16,36,0.88)),
-        url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80") center/cover no-repeat;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      padding: 64px 0 56px;
-    }
-
-    .syn-beforeafter__header {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .syn-beforeafter__header h2 {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--syn-white);
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-
-    .syn-beforeafter__header p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.55);
-      max-width: 520px;
-      margin-inline: auto;
-    }
-
-    .syn-beforeafter__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .syn-beforeafter__panel {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-    }
-
-    .syn-beforeafter__panel-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .syn-beforeafter__panel--before .syn-beforeafter__panel-label {
-      background: #e8ecf2;
-      color: var(--syn-grey-text);
-    }
-
-    .syn-beforeafter__panel--after .syn-beforeafter__panel-label {
-      background: var(--syn-navy);
-      color: var(--syn-white);
-    }
-
-    .syn-beforeafter__panel-label .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-
-    .syn-beforeafter__panel--before .dot { background: #b0bac9; }
-    .syn-beforeafter__panel--after .dot  { background: var(--syn-red); }
-
-    .syn-mock-before {
-      background: #dde2ea;
-      padding: 0;
-    }
-
-    .syn-mock-before__nav {
-      height: 44px;
-      background: #1e3a6e;
-      display: flex;
-      align-items: center;
-      padding: 0 14px;
-      gap: 8px;
-    }
-
-    .syn-mock-before__nav-logo {
-      width: 70px;
-      height: 18px;
-      background: rgba(255,255,255,0.25);
-      border-radius: 3px;
-    }
-
-    .syn-mock-before__nav-links {
-      display: flex;
-      gap: 5px;
-      margin-left: 8px;
-      flex: 1;
-    }
-
-    .syn-mock-before__nav-links span {
-      width: 36px;
-      height: 8px;
-      background: rgba(255,255,255,0.18);
-      border-radius: 2px;
-    }
-
-    .syn-mock-before__nav-btn {
-      width: 44px;
-      height: 20px;
-      background: #3a6abf;
-      border-radius: 3px;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .syn-mock-before__carousel {
-      height: 140px;
-      background: linear-gradient(135deg, #8a9ab5 0%, #b0bac9 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      position: relative;
-    }
-
-    .syn-mock-before__carousel::before {
-      content: 'PROMOTIONAL BANNER SLIDE 2 / 5';
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.55);
-      position: absolute;
-      top: 10px;
-    }
-
-    .syn-mock-before__carousel-img {
-      width: 120px;
-      height: 40px;
-      background: rgba(255,255,255,0.3);
-      border-radius: 3px;
-    }
-
-    .syn-mock-before__carousel-dots {
-      display: flex;
-      gap: 4px;
-      position: absolute;
-      bottom: 8px;
-    }
-
-    .syn-mock-before__carousel-dots span {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-    }
-
-    .syn-mock-before__carousel-dots span:nth-child(2) {
-      background: rgba(255,255,255,0.9);
-    }
-
-    .syn-mock-before__carousel-arrow {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 22px;
-      height: 22px;
-      background: rgba(0,0,0,0.25);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .syn-mock-before__stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-      border-top: 2px solid #c8cfd9;
-      background: #f0f2f5;
-    }
-
-    .syn-mock-before__stat {
-      padding: 10px 8px;
-      text-align: center;
-      border-right: 1px solid #c8cfd9;
-    }
-
-    .syn-mock-before__stat:last-child { border-right: none; }
-
-    .syn-mock-before__stat-num {
-      height: 10px;
-      background: #8a9ab5;
-      border-radius: 2px;
-      margin: 0 auto 4px;
-      width: 50%;
-    }
-
-    .syn-mock-before__stat-label {
-      height: 7px;
-      background: #c0c8d4;
-      border-radius: 2px;
-      width: 70%;
-      margin: 0 auto;
-    }
-
-    .syn-mock-before__body {
-      padding: 14px;
-    }
-
-    .syn-mock-before__body-heading {
-      height: 9px;
-      background: #8a9ab5;
-      border-radius: 2px;
-      width: 45%;
-      margin-bottom: 8px;
-    }
-
-    .syn-mock-before__body-text {
-      height: 7px;
-      background: #c0c8d4;
-      border-radius: 2px;
-      margin-bottom: 5px;
-    }
-
-    .syn-mock-before__body-text:nth-child(3) { width: 90%; }
-    .syn-mock-before__body-text:nth-child(4) { width: 80%; }
-    .syn-mock-before__body-text:nth-child(5) { width: 55%; }
-
-    .syn-mock-before__issues {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      padding: 10px 14px 14px;
-    }
-
-    .syn-mock-before__issue {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 10px;
-      font-weight: 600;
-      padding: 3px 7px;
-      border-radius: 20px;
-      background: #fde8e8;
-      color: #c42920;
-      border: 1px solid #f5c0be;
-    }
-
-    .syn-mock-after {
-      background: var(--syn-navy);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .syn-mock-after::before {
-      content: '';
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(230,51,41,0.25) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .syn-mock-after__inner {
-      padding: 24px 20px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .syn-mock-after__chip {
-      display: inline-block;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--syn-red);
-      background: rgba(230,51,41,0.15);
-      border: 1px solid rgba(230,51,41,0.3);
-      border-radius: 20px;
-      padding: 3px 8px;
-      margin-bottom: 12px;
-    }
-
-    .syn-mock-after__headline {
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--syn-white);
-      line-height: 1.3;
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-
-    .syn-mock-after__sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-
-    .syn-mock-after__btns {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .syn-mock-after__btn-primary {
-      padding: 7px 14px;
-      background: var(--syn-red);
-      color: var(--syn-white);
-      border-radius: 5px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .syn-mock-after__btn-ghost {
-      padding: 6px 14px;
-      background: transparent;
-      color: rgba(255,255,255,0.7);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 5px;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .syn-mock-after__stats {
-      display: flex;
-      gap: 12px;
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .syn-mock-after__stat {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .syn-mock-after__stat-num {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--syn-white);
-    }
-
-    .syn-mock-after__stat-label {
-      font-size: 10px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.3;
-    }
-
-    .syn-beforeafter__caption {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      font-style: italic;
-    }
 
     .syn-hero__it-visual {
       position: absolute;
@@ -642,7 +279,9 @@
 
     /* ─── Hero ──────────────────────────────────────────────────────────── */
     .syn-hero {
-      background: linear-gradient(135deg, var(--syn-navy-deep) 0%, var(--syn-navy-mid) 60%, #1e3060 100%);
+      background:
+        linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(17,31,58,0.82) 55%, rgba(13,27,53,0.88) 100%),
+        url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80") center/cover no-repeat;
       position: relative;
       overflow: hidden;
       padding: 100px 0 80px;
@@ -1808,14 +1447,6 @@
       }
 
 
-      .syn-beforeafter__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .syn-beforeafter {
-        padding: 36px 0;
-      }
-
       .syn-stats__inner {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1952,105 +1583,157 @@
     </div>
   </div>
 
-  <!-- Before / After Comparison -->
-  <section class="syn-beforeafter" aria-label="Before and after comparison">
+  <!-- Hero -->
+  <section class="syn-hero" aria-labelledby="syn-hero-h1">
+    <div class="syn-hero__geo syn-hero__geo--1" aria-hidden="true"></div>
+    <div class="syn-hero__geo syn-hero__geo--2" aria-hidden="true"></div>
+    <div class="syn-hero__geo syn-hero__geo--3" aria-hidden="true"></div>
+
     <div class="syn-container">
-      <div class="syn-beforeafter__header">
-        <h2>What a rebuild delivers</h2>
-        <p>A side-by-side look at the current homepage versus what we'd build in Webflow.</p>
-      </div>
+      <div class="syn-hero__inner">
+        <div class="syn-hero__content">
 
-      <div class="syn-beforeafter__grid">
-
-        <!-- Before Panel -->
-        <div class="syn-beforeafter__panel syn-beforeafter__panel--before">
-          <div class="syn-beforeafter__panel-label">
-            <span class="dot"></span>
-            Their current homepage
+          <div class="syn-hero__eyebrow" aria-hidden="true">
+            <span class="syn-hero__eyebrow-dot"></span>
+            <span>ICT Distribution &amp; Channel Services</span>
           </div>
-          <div class="syn-mock-before">
-            <div class="syn-mock-before__nav">
-              <div class="syn-mock-before__nav-logo"></div>
-              <div class="syn-mock-before__nav-links">
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <div class="syn-mock-before__nav-btn"></div>
+
+          <h1 id="syn-hero-h1">
+            Grow your IT business<br />
+            with <em>Australia's</em><br />
+            most connected<br />
+            distributor
+          </h1>
+
+          <p class="syn-hero__sub">
+            Synnex gives channel partners, MSPs, and resellers access to 80+ vendor brands, competitive buy pricing, specialist pre-sales support, and a logistics network built for Australian scale.
+          </p>
+
+          <div class="syn-hero__ctas">
+            <a href="#cta" class="syn-btn syn-btn--primary">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Become a Partner
+            </a>
+            <a href="#solutions" class="syn-btn syn-btn--ghost">
+              Explore Solutions
+            </a>
+          </div>
+
+          <div class="syn-hero__trust">
+            <div class="syn-hero__trust-avatars" aria-hidden="true">
+              <div class="syn-hero__trust-avatar">CD</div>
+              <div class="syn-hero__trust-avatar">PL</div>
+              <div class="syn-hero__trust-avatar">MP</div>
             </div>
-            <div class="syn-mock-before__carousel">
-              <div class="syn-mock-before__carousel-img"></div>
-              <div class="syn-mock-before__carousel-dots">
-                <span></span><span></span><span></span><span></span><span></span>
-              </div>
-              <div class="syn-mock-before__carousel-arrow">&#8250;</div>
-            </div>
-            <div class="syn-mock-before__stats">
-              <div class="syn-mock-before__stat">
-                <div class="syn-mock-before__stat-num"></div>
-                <div class="syn-mock-before__stat-label"></div>
-              </div>
-              <div class="syn-mock-before__stat">
-                <div class="syn-mock-before__stat-num"></div>
-                <div class="syn-mock-before__stat-label"></div>
-              </div>
-              <div class="syn-mock-before__stat">
-                <div class="syn-mock-before__stat-num"></div>
-                <div class="syn-mock-before__stat-label"></div>
-              </div>
-            </div>
-            <div class="syn-mock-before__body">
-              <div class="syn-mock-before__body-heading"></div>
-              <div class="syn-mock-before__body-text"></div>
-              <div class="syn-mock-before__body-text"></div>
-              <div class="syn-mock-before__body-text"></div>
-            </div>
-            <div class="syn-mock-before__issues">
-              <span class="syn-mock-before__issue">&#9888; 5-slide carousel</span>
-              <span class="syn-mock-before__issue">&#9888; Login-only CTA</span>
-              <span class="syn-mock-before__issue">&#9888; 14 blocking scripts</span>
-              <span class="syn-mock-before__issue">&#9888; No mobile nav</span>
-              <span class="syn-mock-before__issue">&#9888; Bootstrap 3 era</span>
+            <div class="syn-hero__trust-text">
+              <strong>6,000+ channel partners</strong>
+              across APAC trust Synnex
             </div>
           </div>
+
         </div>
 
-        <!-- After Panel -->
-        <div class="syn-beforeafter__panel syn-beforeafter__panel--after">
-          <div class="syn-beforeafter__panel-label">
-            <span class="dot"></span>
-            What we'd build
-          </div>
-          <div class="syn-mock-after">
-            <div class="syn-mock-after__inner">
-              <div class="syn-mock-after__chip">Webflow rebuild</div>
-              <div class="syn-mock-after__headline">Australia's leading ICT distributor for channel partners and MSPs</div>
-              <div class="syn-mock-after__sub">Access 80+ vendor brands, competitive pricing, and dedicated partner support — all through one distributor relationship.</div>
-              <div class="syn-mock-after__btns">
-                <div class="syn-mock-after__btn-primary">Become a Partner</div>
-                <div class="syn-mock-after__btn-ghost">Explore Solutions</div>
-              </div>
-              <div class="syn-mock-after__stats">
-                <div class="syn-mock-after__stat">
-                  <div class="syn-mock-after__stat-num">30<span style="color:var(--syn-red);">+</span></div>
-                  <div class="syn-mock-after__stat-label">Years in AU distribution</div>
-                </div>
-                <div class="syn-mock-after__stat">
-                  <div class="syn-mock-after__stat-num">6,000<span style="color:var(--syn-red);">+</span></div>
-                  <div class="syn-mock-after__stat-label">Channel partners</div>
-                </div>
-                <div class="syn-mock-after__stat">
-                  <div class="syn-mock-after__stat-num">80<span style="color:var(--syn-red);">+</span></div>
-                  <div class="syn-mock-after__stat-label">Vendor brands</div>
-                </div>
-              </div>
+        <!-- Hero card — desktop only -->
+        <div class="syn-hero__card" aria-hidden="true">
+          <div class="syn-hero__card-header">Why partners choose Synnex</div>
+
+          <div class="syn-hero__card-item">
+            <div class="syn-hero__card-icon syn-hero__card-icon--red">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2L2 7l8 5 8-5-8-5z" stroke="#e63329" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 13l8 5 8-5" stroke="#e63329" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="syn-hero__card-title">80+ Vendor Brands</div>
+              <div class="syn-hero__card-desc">HP, Lenovo, Microsoft, Cisco, Apple and more — all through one distributor account.</div>
             </div>
           </div>
+
+          <div class="syn-hero__card-item">
+            <div class="syn-hero__card-icon syn-hero__card-icon--blue">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="8" stroke="#4a6fa5" stroke-width="1.5"/>
+                <path d="M7 10l2 2 4-4" stroke="#4a6fa5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="syn-hero__card-title">Dedicated Partner Support</div>
+              <div class="syn-hero__card-desc">Named account managers and specialist pre-sales engineers for complex deals.</div>
+            </div>
+          </div>
+
+          <div class="syn-hero__card-item">
+            <div class="syn-hero__card-icon syn-hero__card-icon--teal">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="#26a69a" stroke-width="1.5"/>
+                <path d="M6 8h8M6 12h5" stroke="#26a69a" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="syn-hero__card-title">Fast AU Logistics</div>
+              <div class="syn-hero__card-desc">National distribution centres with same-day despatch for in-stock items.</div>
+            </div>
+          </div>
+
+          <div class="syn-hero__it-visual" aria-hidden="true">
+            <svg viewBox="0 0 460 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Connection lines from hub to satellites -->
+              <line x1="230" y1="170" x2="100" y2="60" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="230" y1="170" x2="360" y2="60" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="230" y1="170" x2="60" y2="170" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="230" y1="170" x2="400" y2="170" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="230" y1="170" x2="100" y2="290" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="230" y1="170" x2="360" y2="290" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <line x1="230" y1="170" x2="230" y2="40" stroke="rgba(230,51,41,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <!-- Central hub -->
+              <circle cx="230" cy="170" r="38" fill="rgba(230,51,41,0.12)" stroke="rgba(230,51,41,0.5)" stroke-width="1.5"/>
+              <circle cx="230" cy="170" r="24" fill="rgba(230,51,41,0.2)" stroke="rgba(230,51,41,0.7)" stroke-width="1.5"/>
+              <rect x="218" y="161" width="24" height="18" rx="2" fill="rgba(230,51,41,0.8)" stroke="none"/>
+              <rect x="221" y="164" width="4" height="3" rx="0.5" fill="white" opacity="0.8"/>
+              <rect x="227" y="164" width="4" height="3" rx="0.5" fill="white" opacity="0.8"/>
+              <rect x="233" y="164" width="4" height="3" rx="0.5" fill="white" opacity="0.8"/>
+              <rect x="221" y="169" width="4" height="3" rx="0.5" fill="white" opacity="0.5"/>
+              <rect x="227" y="169" width="4" height="3" rx="0.5" fill="white" opacity="0.5"/>
+              <rect x="233" y="169" width="4" height="3" rx="0.5" fill="rgba(230,51,41,1)"/>
+              <!-- Top node: cloud -->
+              <circle cx="230" cy="40" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <path d="M222 44 Q222 38 228 38 Q229 34 234 34 Q239 34 240 38 Q244 38 244 43 Q244 46 241 46 L222 46 Q219 46 219 43 Q219 40 222 40z" fill="rgba(100,160,230,0.7)" stroke="none"/>
+              <!-- Top-left node: laptop -->
+              <circle cx="100" cy="60" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <rect x="91" y="54" width="18" height="12" rx="1" fill="rgba(100,160,230,0.5)" stroke="rgba(100,160,230,0.8)" stroke-width="0.8"/>
+              <rect x="87" y="66" width="26" height="2" rx="1" fill="rgba(100,160,230,0.7)"/>
+              <!-- Top-right node: network switch -->
+              <circle cx="360" cy="60" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <rect x="351" y="55" width="18" height="10" rx="1" fill="none" stroke="rgba(100,160,230,0.8)" stroke-width="0.8"/>
+              <circle cx="355" cy="60" r="1.5" fill="rgba(100,230,100,0.9)"/>
+              <circle cx="360" cy="60" r="1.5" fill="rgba(100,230,100,0.9)"/>
+              <circle cx="365" cy="60" r="1.5" fill="rgba(230,51,41,0.9)"/>
+              <!-- Left node: mobile -->
+              <circle cx="60" cy="170" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <rect x="53" y="160" width="14" height="20" rx="2" fill="none" stroke="rgba(100,160,230,0.8)" stroke-width="0.8"/>
+              <circle cx="60" cy="178" r="1.5" fill="rgba(100,160,230,0.6)"/>
+              <!-- Right node: shield/security -->
+              <circle cx="400" cy="170" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <path d="M400 160 L392 164 L392 170 Q392 177 400 181 Q408 177 408 170 L408 164 Z" fill="rgba(100,200,100,0.3)" stroke="rgba(100,200,100,0.8)" stroke-width="0.8"/>
+              <path d="M396 170 L399 173 L404 167" stroke="rgba(100,200,100,0.9)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- Bottom-left node: database -->
+              <circle cx="100" cy="290" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <ellipse cx="100" cy="283" rx="8" ry="3" fill="none" stroke="rgba(100,160,230,0.8)" stroke-width="0.8"/>
+              <rect x="92" y="283" width="16" height="8" fill="none" stroke="rgba(100,160,230,0.8)" stroke-width="0.8"/>
+              <ellipse cx="100" cy="291" rx="8" ry="3" fill="rgba(100,160,230,0.3)" stroke="rgba(100,160,230,0.8)" stroke-width="0.8"/>
+              <!-- Bottom-right node: analytics -->
+              <circle cx="360" cy="290" r="18" fill="rgba(42,63,111,0.7)" stroke="rgba(100,140,200,0.5)" stroke-width="1"/>
+              <rect x="352" y="296" width="4" height="6" fill="rgba(100,160,230,0.8)"/>
+              <rect x="358" y="291" width="4" height="11" fill="rgba(100,160,230,0.6)"/>
+              <rect x="364" y="286" width="4" height="16" fill="rgba(230,51,41,0.7)"/>
+            </svg>
+          </div>
+
         </div>
-
       </div>
-
-      <p class="syn-beforeafter__caption">
-        Scroll down to see the full homepage concept.
-      </p>
     </div>
   </section>
 
