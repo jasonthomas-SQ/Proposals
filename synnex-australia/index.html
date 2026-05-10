@@ -1,0 +1,2693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synnex Australia — Channel Partner Homepage Concept | Studio Quarantine</title>
+  <meta name="description" content="A homepage concept for Synnex Australia — showing what a Webflow rebuild could look like for Australia's leading ICT distributor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --syn-navy:       #1a2744;
+      --syn-navy-deep:  #111c36;
+      --syn-navy-mid:   #243058;
+      --syn-red:        #e63329;
+      --syn-red-dark:   #c42920;
+      --syn-white:      #ffffff;
+      --syn-grey-light: #f4f6f9;
+      --syn-grey-mid:   #e2e7ef;
+      --syn-grey-text:  #6b7a99;
+      --syn-body-text:  #2d3a52;
+      --syn-gold:       #c9922a;
+      --syn-silver:     #8a9ab5;
+      --radius-sm:      6px;
+      --radius-md:      10px;
+      --radius-lg:      16px;
+      --shadow-card:    0 2px 16px rgba(26,39,68,0.10);
+      --shadow-lift:    0 6px 28px rgba(26,39,68,0.16);
+      --font:           'Inter', system-ui, sans-serif;
+      --transition:     0.2s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--syn-body-text);
+      background: var(--syn-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ─── Utility ───────────────────────────────────────────────────────── */
+    .syn-container {
+      width: 100%;
+      max-width: 1160px;
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+
+    .syn-section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--syn-red);
+      margin-bottom: 12px;
+    }
+
+    .syn-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .syn-btn--primary {
+      background: var(--syn-red);
+      color: var(--syn-white);
+      border-color: var(--syn-red);
+    }
+
+    .syn-btn--primary:hover {
+      background: var(--syn-red-dark);
+      border-color: var(--syn-red-dark);
+      transform: translateY(-1px);
+    }
+
+    .syn-btn--ghost {
+      background: transparent;
+      color: var(--syn-white);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    .syn-btn--ghost:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--syn-white);
+      transform: translateY(-1px);
+    }
+
+    .syn-btn--ghost-dark {
+      background: transparent;
+      color: var(--syn-navy);
+      border-color: var(--syn-navy);
+    }
+
+    .syn-btn--ghost-dark:hover {
+      background: var(--syn-navy);
+      color: var(--syn-white);
+      transform: translateY(-1px);
+    }
+
+    /* ─── Proposal Banner ───────────────────────────────────────────────── */
+    .syn-proposal-banner {
+      background: var(--syn-navy-deep);
+      border-bottom: 2px solid var(--syn-red);
+      padding: 8px 24px;
+      text-align: center;
+    }
+
+    .syn-proposal-banner p {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+    }
+
+    .syn-proposal-banner strong {
+      color: var(--syn-white);
+    }
+
+    .syn-proposal-banner a {
+      color: var(--syn-red);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* ─── Navigation ────────────────────────────────────────────────────── */
+    .syn-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--syn-white);
+      border-bottom: 1px solid var(--syn-grey-mid);
+      box-shadow: 0 1px 8px rgba(26,39,68,0.07);
+    }
+
+    .syn-nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 32px;
+    }
+
+    .syn-nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .syn-nav__logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--syn-navy);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .syn-nav__logo-mark::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      width: 12px;
+      height: 12px;
+      background: var(--syn-red);
+      border-radius: 2px;
+    }
+
+    .syn-nav__logo-mark svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--syn-white);
+      z-index: 1;
+      position: relative;
+    }
+
+    .syn-nav__logo-text {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--syn-navy);
+      letter-spacing: -0.02em;
+    }
+
+    .syn-nav__logo-text span {
+      color: var(--syn-red);
+    }
+
+    .syn-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+      flex: 1;
+    }
+
+    .syn-nav__links a {
+      display: block;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--syn-body-text);
+      border-radius: var(--radius-sm);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .syn-nav__links a:hover {
+      background: var(--syn-grey-light);
+      color: var(--syn-navy);
+    }
+
+    .syn-nav__cta {
+      flex-shrink: 0;
+    }
+
+    .syn-nav__cta .syn-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .syn-nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .syn-nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--syn-navy);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    /* ─── Before / After ────────────────────────────────────────────────── */
+    .syn-beforeafter {
+      background: var(--syn-grey-light);
+      border-bottom: 1px solid var(--syn-grey-mid);
+      padding: 48px 0;
+    }
+
+    .syn-beforeafter__header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .syn-beforeafter__header h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--syn-navy);
+      margin-bottom: 6px;
+    }
+
+    .syn-beforeafter__header p {
+      font-size: 14px;
+      color: var(--syn-grey-text);
+      max-width: 520px;
+      margin-inline: auto;
+    }
+
+    .syn-beforeafter__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .syn-beforeafter__panel {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .syn-beforeafter__panel-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .syn-beforeafter__panel--before .syn-beforeafter__panel-label {
+      background: #e8ecf2;
+      color: var(--syn-grey-text);
+    }
+
+    .syn-beforeafter__panel--after .syn-beforeafter__panel-label {
+      background: var(--syn-navy);
+      color: var(--syn-white);
+    }
+
+    .syn-beforeafter__panel-label .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .syn-beforeafter__panel--before .dot { background: #b0bac9; }
+    .syn-beforeafter__panel--after .dot  { background: var(--syn-red); }
+
+    /* Before mockup — CSS illustration of current site */
+    .syn-mock-before {
+      background: #dde2ea;
+      padding: 0;
+    }
+
+    .syn-mock-before__nav {
+      height: 44px;
+      background: #1e3a6e;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 8px;
+    }
+
+    .syn-mock-before__nav-logo {
+      width: 70px;
+      height: 18px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 3px;
+    }
+
+    .syn-mock-before__nav-links {
+      display: flex;
+      gap: 5px;
+      margin-left: 8px;
+      flex: 1;
+    }
+
+    .syn-mock-before__nav-links span {
+      width: 36px;
+      height: 8px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 2px;
+    }
+
+    .syn-mock-before__nav-btn {
+      width: 44px;
+      height: 20px;
+      background: #3a6abf;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .syn-mock-before__carousel {
+      height: 140px;
+      background: linear-gradient(135deg, #8a9ab5 0%, #b0bac9 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+    }
+
+    .syn-mock-before__carousel::before {
+      content: 'PROMOTIONAL BANNER SLIDE 2 / 5';
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.55);
+      position: absolute;
+      top: 10px;
+    }
+
+    .syn-mock-before__carousel-img {
+      width: 120px;
+      height: 40px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 3px;
+    }
+
+    .syn-mock-before__carousel-dots {
+      display: flex;
+      gap: 4px;
+      position: absolute;
+      bottom: 8px;
+    }
+
+    .syn-mock-before__carousel-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+    }
+
+    .syn-mock-before__carousel-dots span:nth-child(2) {
+      background: rgba(255,255,255,0.9);
+    }
+
+    .syn-mock-before__carousel-arrow {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 22px;
+      height: 22px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .syn-mock-before__stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 2px solid #c8cfd9;
+      background: #f0f2f5;
+    }
+
+    .syn-mock-before__stat {
+      padding: 10px 8px;
+      text-align: center;
+      border-right: 1px solid #c8cfd9;
+    }
+
+    .syn-mock-before__stat:last-child { border-right: none; }
+
+    .syn-mock-before__stat-num {
+      height: 10px;
+      background: #8a9ab5;
+      border-radius: 2px;
+      margin: 0 auto 4px;
+      width: 50%;
+    }
+
+    .syn-mock-before__stat-label {
+      height: 7px;
+      background: #c0c8d4;
+      border-radius: 2px;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    .syn-mock-before__body {
+      padding: 14px;
+    }
+
+    .syn-mock-before__body-heading {
+      height: 9px;
+      background: #8a9ab5;
+      border-radius: 2px;
+      width: 45%;
+      margin-bottom: 8px;
+    }
+
+    .syn-mock-before__body-text {
+      height: 7px;
+      background: #c0c8d4;
+      border-radius: 2px;
+      margin-bottom: 5px;
+    }
+
+    .syn-mock-before__body-text:nth-child(3) { width: 90%; }
+    .syn-mock-before__body-text:nth-child(4) { width: 80%; }
+    .syn-mock-before__body-text:nth-child(5) { width: 55%; }
+
+    .syn-mock-before__issues {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 10px 14px 14px;
+    }
+
+    .syn-mock-before__issue {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 7px;
+      border-radius: 20px;
+      background: #fde8e8;
+      color: #c42920;
+      border: 1px solid #f5c0be;
+    }
+
+    /* After mockup — teaser card */
+    .syn-mock-after {
+      background: var(--syn-navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .syn-mock-after::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(230,51,41,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .syn-mock-after__inner {
+      padding: 24px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .syn-mock-after__chip {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--syn-red);
+      background: rgba(230,51,41,0.15);
+      border: 1px solid rgba(230,51,41,0.3);
+      border-radius: 20px;
+      padding: 3px 8px;
+      margin-bottom: 12px;
+    }
+
+    .syn-mock-after__headline {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--syn-white);
+      line-height: 1.3;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .syn-mock-after__sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .syn-mock-after__btns {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .syn-mock-after__btn-primary {
+      padding: 7px 14px;
+      background: var(--syn-red);
+      color: var(--syn-white);
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .syn-mock-after__btn-ghost {
+      padding: 6px 14px;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 5px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .syn-mock-after__stats {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .syn-mock-after__stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .syn-mock-after__stat-num {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--syn-white);
+    }
+
+    .syn-mock-after__stat-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.3;
+    }
+
+    .syn-beforeafter__caption {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--syn-grey-text);
+      font-style: italic;
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────────────────── */
+    .syn-hero {
+      background: linear-gradient(135deg, var(--syn-navy-deep) 0%, var(--syn-navy-mid) 60%, #1e3060 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 80px;
+    }
+
+    .syn-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 90% 50%, rgba(230,51,41,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,255,255,0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* Decorative geometric shapes */
+    .syn-hero::after {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .syn-hero__geo {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .syn-hero__geo--1 {
+      width: 700px;
+      height: 700px;
+      top: -200px;
+      right: -150px;
+    }
+
+    .syn-hero__geo--2 {
+      width: 400px;
+      height: 400px;
+      bottom: -150px;
+      left: -100px;
+    }
+
+    .syn-hero__geo--3 {
+      width: 180px;
+      height: 180px;
+      top: 60px;
+      right: 20%;
+      background: rgba(230,51,41,0.06);
+      border-color: rgba(230,51,41,0.15);
+      border-radius: var(--radius-md);
+      transform: rotate(20deg);
+    }
+
+    .syn-hero__inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .syn-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(230,51,41,0.15);
+      border: 1px solid rgba(230,51,41,0.3);
+      border-radius: 20px;
+      padding: 5px 12px 5px 8px;
+      margin-bottom: 24px;
+    }
+
+    .syn-hero__eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--syn-red);
+    }
+
+    .syn-hero__eyebrow span {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .syn-hero h1 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      color: var(--syn-white);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .syn-hero h1 em {
+      font-style: normal;
+      color: var(--syn-red);
+    }
+
+    .syn-hero__sub {
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .syn-hero__ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .syn-hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .syn-hero__trust-avatars {
+      display: flex;
+    }
+
+    .syn-hero__trust-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid var(--syn-navy);
+      background: linear-gradient(135deg, #4a6fa5, #2d5488);
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--syn-white);
+    }
+
+    .syn-hero__trust-avatar:first-child { margin-left: 0; }
+    .syn-hero__trust-avatar:nth-child(2) { background: linear-gradient(135deg, #5a8fa5, #3d6488); }
+    .syn-hero__trust-avatar:nth-child(3) { background: linear-gradient(135deg, #7a6fa5, #4d4888); }
+
+    .syn-hero__trust-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    .syn-hero__trust-text strong {
+      color: rgba(255,255,255,0.85);
+      display: block;
+      font-weight: 600;
+    }
+
+    /* Hero card panel */
+    .syn-hero__card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .syn-hero__card-header {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+
+    .syn-hero__card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .syn-hero__card-item:last-child { border-bottom: none; }
+
+    .syn-hero__card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .syn-hero__card-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .syn-hero__card-icon--red   { background: rgba(230,51,41,0.2); }
+    .syn-hero__card-icon--blue  { background: rgba(74,111,165,0.25); }
+    .syn-hero__card-icon--teal  { background: rgba(38,166,154,0.2); }
+
+    .syn-hero__card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--syn-white);
+      margin-bottom: 3px;
+    }
+
+    .syn-hero__card-desc {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+    }
+
+    /* ─── Trust Stats Bar ───────────────────────────────────────────────── */
+    .syn-stats {
+      background: var(--syn-white);
+      border-bottom: 1px solid var(--syn-grey-mid);
+      padding: 0;
+    }
+
+    .syn-stats__inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .syn-stats__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 24px;
+      border-right: 1px solid var(--syn-grey-mid);
+      position: relative;
+    }
+
+    .syn-stats__item:last-child { border-right: none; }
+
+    .syn-stats__item::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--syn-red);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .syn-stats__item:hover::before {
+      transform: scaleX(1);
+    }
+
+    .syn-stats__num {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--syn-navy);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .syn-stats__num em {
+      font-style: normal;
+      color: var(--syn-red);
+    }
+
+    .syn-stats__label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--syn-grey-text);
+      line-height: 1.4;
+    }
+
+    /* ─── Solutions Grid ────────────────────────────────────────────────── */
+    .syn-solutions {
+      padding: 88px 0;
+      background: var(--syn-grey-light);
+    }
+
+    .syn-solutions__header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .syn-solutions__header h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 800;
+      color: var(--syn-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .syn-solutions__header p {
+      font-size: 17px;
+      color: var(--syn-grey-text);
+      max-width: 540px;
+      margin-inline: auto;
+    }
+
+    .syn-solutions__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .syn-solution-card {
+      background: var(--syn-white);
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      border: 1px solid var(--syn-grey-mid);
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      cursor: default;
+    }
+
+    .syn-solution-card:hover {
+      box-shadow: var(--shadow-lift);
+      transform: translateY(-3px);
+      border-color: rgba(26,39,68,0.12);
+    }
+
+    .syn-solution-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .syn-solution-card__icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .syn-solution-card__icon--cloud    { background: #e8f0fe; }
+    .syn-solution-card__icon--security { background: #fde8e8; }
+    .syn-solution-card__icon--infra    { background: #e8f5e9; }
+    .syn-solution-card__icon--devices  { background: #fff3e0; }
+    .syn-solution-card__icon--net      { background: #ede7f6; }
+    .syn-solution-card__icon--print    { background: #e0f7fa; }
+    .syn-solution-card__icon--collab   { background: #fce4ec; }
+    .syn-solution-card__icon--data     { background: #f3e5f5; }
+
+    .syn-solution-card__title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--syn-navy);
+      margin-bottom: 8px;
+    }
+
+    .syn-solution-card__desc {
+      font-size: 13px;
+      color: var(--syn-grey-text);
+      line-height: 1.55;
+    }
+
+    .syn-solution-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--syn-red);
+      transition: gap var(--transition);
+    }
+
+    .syn-solution-card:hover .syn-solution-card__link {
+      gap: 8px;
+    }
+
+    /* ─── Vendor Logos ──────────────────────────────────────────────────── */
+    .syn-vendors {
+      padding: 72px 0;
+      background: var(--syn-white);
+    }
+
+    .syn-vendors__header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .syn-vendors__header h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--syn-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .syn-vendors__header p {
+      font-size: 15px;
+      color: var(--syn-grey-text);
+    }
+
+    .syn-vendors__strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .syn-vendor-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      border: 1.5px solid transparent;
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: default;
+    }
+
+    .syn-vendor-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .syn-vendor-badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    /* Individual vendor brand colours */
+    .syn-vendor-badge--hp       { background: #f0f4f9; border-color: #0096d6; color: #0070b9; }
+    .syn-vendor-badge--hp .syn-vendor-badge__dot { background: #0096d6; }
+
+    .syn-vendor-badge--lenovo   { background: #f5f0f0; border-color: #e2001a; color: #c0001a; }
+    .syn-vendor-badge--lenovo .syn-vendor-badge__dot { background: #e2001a; }
+
+    .syn-vendor-badge--microsoft { background: #f0f5ff; border-color: #0078d4; color: #0063b1; }
+    .syn-vendor-badge--microsoft .syn-vendor-badge__dot { background: #0078d4; }
+
+    .syn-vendor-badge--cisco    { background: #f0f8f0; border-color: #1ba0d7; color: #0a7aad; }
+    .syn-vendor-badge--cisco .syn-vendor-badge__dot { background: #1ba0d7; }
+
+    .syn-vendor-badge--apple    { background: #f5f5f7; border-color: #666666; color: #333333; }
+    .syn-vendor-badge--apple .syn-vendor-badge__dot { background: #555555; }
+
+    .syn-vendor-badge--dell     { background: #f0f4ff; border-color: #007db8; color: #0060a0; }
+    .syn-vendor-badge--dell .syn-vendor-badge__dot { background: #007db8; }
+
+    .syn-vendor-badge--samsung  { background: #f0f4fa; border-color: #1428a0; color: #1428a0; }
+    .syn-vendor-badge--samsung .syn-vendor-badge__dot { background: #1428a0; }
+
+    .syn-vendor-badge--apc      { background: #f5f9f0; border-color: #5e9e27; color: #4a7e1e; }
+    .syn-vendor-badge--apc .syn-vendor-badge__dot { background: #5e9e27; }
+
+    .syn-vendor-badge--logitech { background: #f9f5f0; border-color: #00b140; color: #008a30; }
+    .syn-vendor-badge--logitech .syn-vendor-badge__dot { background: #00b140; }
+
+    .syn-vendor-badge--asus     { background: #f8f5f0; border-color: #00539b; color: #003d73; }
+    .syn-vendor-badge--asus .syn-vendor-badge__dot { background: #00539b; }
+
+    .syn-vendor-badge--vmware   { background: #f0f5fa; border-color: #607080; color: #445566; }
+    .syn-vendor-badge--vmware .syn-vendor-badge__dot { background: #607080; }
+
+    .syn-vendor-badge--fortinet { background: #fff5f0; border-color: #da291c; color: #b82215; }
+    .syn-vendor-badge--fortinet .syn-vendor-badge__dot { background: #da291c; }
+
+    .syn-vendor-badge--google   { background: #f8f8f8; border-color: #4285f4; color: #2a65c8; }
+    .syn-vendor-badge--google .syn-vendor-badge__dot { background: #4285f4; }
+
+    .syn-vendor-badge--amd      { background: #fdf5f5; border-color: #ed1c24; color: #c21219; }
+    .syn-vendor-badge--amd .syn-vendor-badge__dot { background: #ed1c24; }
+
+    .syn-vendor-badge--intel    { background: #f0f5ff; border-color: #0071c5; color: #0055a0; }
+    .syn-vendor-badge--intel .syn-vendor-badge__dot { background: #0071c5; }
+
+    .syn-vendors__more {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 14px;
+      color: var(--syn-grey-text);
+    }
+
+    .syn-vendors__more a {
+      color: var(--syn-red);
+      font-weight: 600;
+      transition: opacity var(--transition);
+    }
+
+    .syn-vendors__more a:hover { opacity: 0.8; }
+
+    /* ─── Social Proof ──────────────────────────────────────────────────── */
+    .syn-proof {
+      padding: 88px 0;
+      background: var(--syn-grey-light);
+    }
+
+    .syn-proof__header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .syn-proof__header h2 {
+      font-size: clamp(24px, 2.5vw, 34px);
+      font-weight: 800;
+      color: var(--syn-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .syn-proof__header p {
+      font-size: 16px;
+      color: var(--syn-grey-text);
+    }
+
+    .syn-testimonials {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 52px;
+    }
+
+    .syn-testimonial {
+      background: var(--syn-white);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      border: 1px solid var(--syn-grey-mid);
+      position: relative;
+      transition: box-shadow var(--transition);
+    }
+
+    .syn-testimonial:hover {
+      box-shadow: var(--shadow-lift);
+    }
+
+    .syn-testimonial__quote-mark {
+      font-size: 60px;
+      line-height: 0.8;
+      color: var(--syn-red);
+      font-family: Georgia, serif;
+      margin-bottom: 16px;
+      opacity: 0.35;
+    }
+
+    .syn-testimonial__stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 14px;
+    }
+
+    .syn-testimonial__star {
+      width: 14px;
+      height: 14px;
+      fill: #f5a623;
+    }
+
+    .syn-testimonial__text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--syn-body-text);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .syn-testimonial__footer {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--syn-grey-mid);
+    }
+
+    .syn-testimonial__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--syn-white);
+      flex-shrink: 0;
+    }
+
+    .syn-testimonial__avatar--a { background: linear-gradient(135deg, #2d5488, #4a6fa5); }
+    .syn-testimonial__avatar--b { background: linear-gradient(135deg, #3d6b4f, #5a9e6e); }
+
+    .syn-testimonial__name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--syn-navy);
+    }
+
+    .syn-testimonial__meta {
+      font-size: 12px;
+      color: var(--syn-grey-text);
+      margin-top: 2px;
+    }
+
+    .syn-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .syn-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 28px;
+      background: var(--syn-white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--syn-grey-mid);
+      min-width: 160px;
+    }
+
+    .syn-badge__icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .syn-badge__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .syn-badge__icon--gold { background: #fff8e1; }
+    .syn-badge__icon--blue { background: #e3f2fd; }
+    .syn-badge__icon--green { background: #e8f5e9; }
+
+    .syn-badge__label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--syn-navy);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .syn-badge__sub {
+      font-size: 11px;
+      color: var(--syn-grey-text);
+      text-align: center;
+    }
+
+    /* ─── Partner Tiers ─────────────────────────────────────────────────── */
+    .syn-tiers {
+      background: var(--syn-navy);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .syn-tiers::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 110% 50%, rgba(230,51,41,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .syn-tiers__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .syn-tiers__header h2 {
+      font-size: clamp(24px, 2.5vw, 36px);
+      font-weight: 800;
+      color: var(--syn-white);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .syn-tiers__header p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    .syn-tiers__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .syn-tier {
+      border-radius: var(--radius-md);
+      padding: 28px 22px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      cursor: default;
+    }
+
+    .syn-tier:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .syn-tier--authorised { border-top: 3px solid #8a9ab5; }
+    .syn-tier--silver     { border-top: 3px solid #c0c8d4; }
+    .syn-tier--gold       { border-top: 3px solid var(--syn-gold); }
+    .syn-tier--platinum   { border-top: 3px solid #e8ecf5; }
+
+    .syn-tier__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .syn-tier--authorised .syn-tier__badge { background: rgba(138,154,181,0.2); color: #8a9ab5; }
+    .syn-tier--silver     .syn-tier__badge { background: rgba(192,200,212,0.2); color: #c0c8d4; }
+    .syn-tier--gold       .syn-tier__badge { background: rgba(201,146,42,0.2);  color: var(--syn-gold); }
+    .syn-tier--platinum   .syn-tier__badge { background: rgba(232,236,245,0.15); color: #d8dce8; }
+
+    .syn-tier__title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--syn-white);
+      margin-bottom: 12px;
+    }
+
+    .syn-tier__benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .syn-tier__benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .syn-tier__benefit::before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8' fill='rgba(255,255,255,0.12)'/%3E%3Cpath d='M5 8l2 2 4-4' stroke='rgba(255,255,255,0.6)' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-size: cover;
+    }
+
+    /* ─── CTA Band ──────────────────────────────────────────────────────── */
+    .syn-cta-band {
+      background: linear-gradient(135deg, var(--syn-red) 0%, #c42920 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .syn-cta-band::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .syn-cta-band::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -60px;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .syn-cta-band__inner {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .syn-cta-band__eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+
+    .syn-cta-band h2 {
+      font-size: clamp(28px, 3vw, 44px);
+      font-weight: 800;
+      color: var(--syn-white);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .syn-cta-band__sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin-inline: auto;
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    .syn-cta-band__btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .syn-btn--white {
+      background: var(--syn-white);
+      color: var(--syn-red);
+      border-color: var(--syn-white);
+    }
+
+    .syn-btn--white:hover {
+      background: rgba(255,255,255,0.92);
+      border-color: rgba(255,255,255,0.92);
+      transform: translateY(-1px);
+    }
+
+    .syn-btn--ghost-white {
+      background: transparent;
+      color: var(--syn-white);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    .syn-btn--ghost-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.7);
+      transform: translateY(-1px);
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────────────── */
+    .syn-footer {
+      background: var(--syn-navy-deep);
+      padding: 64px 0 0;
+    }
+
+    .syn-footer__grid {
+      display: grid;
+      grid-template-columns: 260px 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .syn-footer__brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .syn-footer__brand-logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--syn-navy-mid);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .syn-footer__brand-logo-mark::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 10px;
+      height: 10px;
+      background: var(--syn-red);
+      border-radius: 2px;
+    }
+
+    .syn-footer__brand-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--syn-white);
+    }
+
+    .syn-footer__brand-name span { color: var(--syn-red); }
+
+    .syn-footer__tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .syn-footer__address {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      font-style: normal;
+    }
+
+    .syn-footer__socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .syn-footer__social {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .syn-footer__social:hover {
+      background: rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .syn-footer__col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+
+    .syn-footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .syn-footer__links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      transition: color var(--transition);
+    }
+
+    .syn-footer__links a:hover {
+      color: rgba(255,255,255,0.9);
+    }
+
+    .syn-footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .syn-footer__bottom-legal {
+      font-size: 12px;
+      color: rgba(255,255,255,0.28);
+    }
+
+    .syn-footer__bottom-credit {
+      font-size: 12px;
+      color: rgba(255,255,255,0.28);
+    }
+
+    .syn-footer__bottom-credit a {
+      color: rgba(255,255,255,0.45);
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    .syn-footer__bottom-credit a:hover {
+      color: var(--syn-white);
+    }
+
+    /* ─── Mobile Nav Drawer ─────────────────────────────────────────────── */
+    .syn-mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    .syn-mobile-nav.is-open {
+      pointer-events: all;
+    }
+
+    .syn-mobile-nav__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17,28,54,0.7);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .syn-mobile-nav.is-open .syn-mobile-nav__overlay {
+      opacity: 1;
+    }
+
+    .syn-mobile-nav__drawer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 90vw);
+      background: var(--syn-white);
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .syn-mobile-nav.is-open .syn-mobile-nav__drawer {
+      transform: translateX(0);
+    }
+
+    .syn-mobile-nav__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--syn-grey-mid);
+    }
+
+    .syn-mobile-nav__close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--syn-grey-light);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--syn-navy);
+      line-height: 1;
+    }
+
+    .syn-mobile-nav__links {
+      list-style: none;
+      padding: 16px;
+      flex: 1;
+    }
+
+    .syn-mobile-nav__links li a {
+      display: flex;
+      align-items: center;
+      padding: 13px 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--syn-body-text);
+      border-radius: var(--radius-sm);
+      transition: background var(--transition);
+    }
+
+    .syn-mobile-nav__links li a:hover {
+      background: var(--syn-grey-light);
+    }
+
+    .syn-mobile-nav__cta {
+      padding: 16px 24px 24px;
+    }
+
+    .syn-mobile-nav__cta .syn-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .syn-solutions__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .syn-tiers__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .syn-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .syn-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .syn-hero__card {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .syn-nav__links,
+      .syn-nav__cta {
+        display: none;
+      }
+
+      .syn-nav__hamburger {
+        display: flex;
+      }
+
+      .syn-mobile-nav {
+        display: block;
+      }
+
+      .syn-beforeafter__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .syn-stats__inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .syn-stats__item:nth-child(2) { border-right: none; }
+      .syn-stats__item:nth-child(3) { border-bottom: none; }
+      .syn-stats__item { border-bottom: 1px solid var(--syn-grey-mid); }
+      .syn-stats__item:nth-child(4) { border-bottom: none; }
+
+      .syn-solutions__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .syn-testimonials {
+        grid-template-columns: 1fr;
+      }
+
+      .syn-tiers__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .syn-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .syn-footer__bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
+      .syn-hero {
+        padding: 60px 0 52px;
+      }
+
+      .syn-beforeafter {
+        padding: 36px 0;
+      }
+
+      .syn-badges {
+        gap: 12px;
+      }
+
+      .syn-badge {
+        min-width: 130px;
+        padding: 16px 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .syn-stats__inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .syn-cta-band__btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .syn-hero__ctas {
+        flex-direction: column;
+      }
+
+      .syn-hero__ctas .syn-btn {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Proposal Banner -->
+  <div class="syn-proposal-banner">
+    <p>
+      <strong>Design concept by <a href="https://studioquarantine.com.au" target="_blank" rel="noopener">Studio Quarantine</a></strong>
+      — illustrative content only. Statistics, testimonials, and awards shown are placeholders for discussion.
+    </p>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="syn-nav" role="navigation" aria-label="Main navigation">
+    <div class="syn-container">
+      <div class="syn-nav__inner">
+
+        <a href="#" class="syn-nav__logo" aria-label="Synnex Australia home">
+          <div class="syn-nav__logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4h14v2H2zM2 8h10v2H2zM2 12h12v2H2z"/>
+            </svg>
+          </div>
+          <span class="syn-nav__logo-text">SYNNEX<span>.</span></span>
+        </a>
+
+        <ul class="syn-nav__links" role="list">
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#vendors">Partners</a></li>
+          <li><a href="#vendors">Vendors</a></li>
+          <li><a href="#tiers">About</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+
+        <div class="syn-nav__cta">
+          <a href="#cta" class="syn-btn syn-btn--primary">Become a Partner</a>
+        </div>
+
+        <button class="syn-nav__hamburger" id="syn-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="syn-mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="syn-mobile-nav" id="syn-mobile-nav" aria-hidden="true">
+    <div class="syn-mobile-nav__overlay" id="syn-nav-overlay"></div>
+    <div class="syn-mobile-nav__drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <div class="syn-mobile-nav__header">
+        <span class="syn-nav__logo-text" style="font-size:17px;">SYNNEX<span style="color:var(--syn-red);">.</span></span>
+        <button class="syn-mobile-nav__close" id="syn-nav-close" aria-label="Close navigation menu">&#x2715;</button>
+      </div>
+      <ul class="syn-mobile-nav__links" role="list">
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#vendors">Partners</a></li>
+        <li><a href="#vendors">Vendors</a></li>
+        <li><a href="#tiers">About</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+      <div class="syn-mobile-nav__cta">
+        <a href="#cta" class="syn-btn syn-btn--primary">Become a Partner</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Before / After Comparison -->
+  <section class="syn-beforeafter" aria-label="Before and after comparison">
+    <div class="syn-container">
+      <div class="syn-beforeafter__header">
+        <h2>What a rebuild delivers</h2>
+        <p>A side-by-side look at the current homepage versus what we'd build in Webflow.</p>
+      </div>
+
+      <div class="syn-beforeafter__grid">
+
+        <!-- Before Panel -->
+        <div class="syn-beforeafter__panel syn-beforeafter__panel--before">
+          <div class="syn-beforeafter__panel-label">
+            <span class="dot"></span>
+            Their current homepage
+          </div>
+          <div class="syn-mock-before">
+            <div class="syn-mock-before__nav">
+              <div class="syn-mock-before__nav-logo"></div>
+              <div class="syn-mock-before__nav-links">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="syn-mock-before__nav-btn"></div>
+            </div>
+            <div class="syn-mock-before__carousel">
+              <div class="syn-mock-before__carousel-img"></div>
+              <div class="syn-mock-before__carousel-dots">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="syn-mock-before__carousel-arrow">&#8250;</div>
+            </div>
+            <div class="syn-mock-before__stats">
+              <div class="syn-mock-before__stat">
+                <div class="syn-mock-before__stat-num"></div>
+                <div class="syn-mock-before__stat-label"></div>
+              </div>
+              <div class="syn-mock-before__stat">
+                <div class="syn-mock-before__stat-num"></div>
+                <div class="syn-mock-before__stat-label"></div>
+              </div>
+              <div class="syn-mock-before__stat">
+                <div class="syn-mock-before__stat-num"></div>
+                <div class="syn-mock-before__stat-label"></div>
+              </div>
+            </div>
+            <div class="syn-mock-before__body">
+              <div class="syn-mock-before__body-heading"></div>
+              <div class="syn-mock-before__body-text"></div>
+              <div class="syn-mock-before__body-text"></div>
+              <div class="syn-mock-before__body-text"></div>
+            </div>
+            <div class="syn-mock-before__issues">
+              <span class="syn-mock-before__issue">&#9888; 5-slide carousel</span>
+              <span class="syn-mock-before__issue">&#9888; Login-only CTA</span>
+              <span class="syn-mock-before__issue">&#9888; 14 blocking scripts</span>
+              <span class="syn-mock-before__issue">&#9888; No mobile nav</span>
+              <span class="syn-mock-before__issue">&#9888; Bootstrap 3 era</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- After Panel -->
+        <div class="syn-beforeafter__panel syn-beforeafter__panel--after">
+          <div class="syn-beforeafter__panel-label">
+            <span class="dot"></span>
+            What we'd build
+          </div>
+          <div class="syn-mock-after">
+            <div class="syn-mock-after__inner">
+              <div class="syn-mock-after__chip">Webflow rebuild</div>
+              <div class="syn-mock-after__headline">Australia's leading ICT distributor for channel partners and MSPs</div>
+              <div class="syn-mock-after__sub">Access 80+ vendor brands, competitive pricing, and dedicated partner support — all through one distributor relationship.</div>
+              <div class="syn-mock-after__btns">
+                <div class="syn-mock-after__btn-primary">Become a Partner</div>
+                <div class="syn-mock-after__btn-ghost">Explore Solutions</div>
+              </div>
+              <div class="syn-mock-after__stats">
+                <div class="syn-mock-after__stat">
+                  <div class="syn-mock-after__stat-num">30<span style="color:var(--syn-red);">+</span></div>
+                  <div class="syn-mock-after__stat-label">Years in AU distribution</div>
+                </div>
+                <div class="syn-mock-after__stat">
+                  <div class="syn-mock-after__stat-num">6,000<span style="color:var(--syn-red);">+</span></div>
+                  <div class="syn-mock-after__stat-label">Channel partners</div>
+                </div>
+                <div class="syn-mock-after__stat">
+                  <div class="syn-mock-after__stat-num">80<span style="color:var(--syn-red);">+</span></div>
+                  <div class="syn-mock-after__stat-label">Vendor brands</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="syn-beforeafter__caption">
+        Scroll down to see the full homepage concept.
+      </p>
+    </div>
+  </section>
+
+  <!-- Hero -->
+  <section class="syn-hero" aria-labelledby="syn-hero-h1">
+    <div class="syn-hero__geo syn-hero__geo--1" aria-hidden="true"></div>
+    <div class="syn-hero__geo syn-hero__geo--2" aria-hidden="true"></div>
+    <div class="syn-hero__geo syn-hero__geo--3" aria-hidden="true"></div>
+
+    <div class="syn-container">
+      <div class="syn-hero__inner">
+        <div class="syn-hero__content">
+
+          <div class="syn-hero__eyebrow" aria-hidden="true">
+            <span class="syn-hero__eyebrow-dot"></span>
+            <span>ICT Distribution &amp; Channel Services</span>
+          </div>
+
+          <h1 id="syn-hero-h1">
+            Grow your IT business<br />
+            with <em>Australia's</em><br />
+            most connected<br />
+            distributor
+          </h1>
+
+          <p class="syn-hero__sub">
+            Synnex gives channel partners, MSPs, and resellers access to 80+ vendor brands, competitive buy pricing, specialist pre-sales support, and a logistics network built for Australian scale.
+          </p>
+
+          <div class="syn-hero__ctas">
+            <a href="#cta" class="syn-btn syn-btn--primary">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Become a Partner
+            </a>
+            <a href="#solutions" class="syn-btn syn-btn--ghost">
+              Explore Solutions
+            </a>
+          </div>
+
+          <div class="syn-hero__trust">
+            <div class="syn-hero__trust-avatars" aria-hidden="true">
+              <div class="syn-hero__trust-avatar">CD</div>
+              <div class="syn-hero__trust-avatar">PL</div>
+              <div class="syn-hero__trust-avatar">MP</div>
+            </div>
+            <div class="syn-hero__trust-text">
+              <strong>6,000+ channel partners</strong>
+              across APAC trust Synnex
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero card — desktop only -->
+        <div class="syn-hero__card" aria-hidden="true">
+          <div class="syn-hero__card-header">Why partners choose Synnex</div>
+
+          <div class="syn-hero__card-item">
+            <div class="syn-hero__card-icon syn-hero__card-icon--red">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2L2 7l8 5 8-5-8-5z" stroke="#e63329" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M2 13l8 5 8-5" stroke="#e63329" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="syn-hero__card-title">80+ Vendor Brands</div>
+              <div class="syn-hero__card-desc">HP, Lenovo, Microsoft, Cisco, Apple and more — all through one distributor account.</div>
+            </div>
+          </div>
+
+          <div class="syn-hero__card-item">
+            <div class="syn-hero__card-icon syn-hero__card-icon--blue">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="8" stroke="#4a6fa5" stroke-width="1.5"/>
+                <path d="M7 10l2 2 4-4" stroke="#4a6fa5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="syn-hero__card-title">Dedicated Partner Support</div>
+              <div class="syn-hero__card-desc">Named account managers and specialist pre-sales engineers for complex deals.</div>
+            </div>
+          </div>
+
+          <div class="syn-hero__card-item">
+            <div class="syn-hero__card-icon syn-hero__card-icon--teal">
+              <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="#26a69a" stroke-width="1.5"/>
+                <path d="M6 8h8M6 12h5" stroke="#26a69a" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div class="syn-hero__card-title">Fast AU Logistics</div>
+              <div class="syn-hero__card-desc">National distribution centres with same-day despatch for in-stock items.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Stats Bar -->
+  <section class="syn-stats" aria-label="Key statistics">
+    <div class="syn-container" style="padding: 0;">
+      <div class="syn-stats__inner">
+        <div class="syn-stats__item">
+          <div class="syn-stats__num">30<em>+</em></div>
+          <div class="syn-stats__label">Years in Australian IT distribution</div>
+        </div>
+        <div class="syn-stats__item">
+          <div class="syn-stats__num">6,000<em>+</em></div>
+          <div class="syn-stats__label">Channel partners across APAC</div>
+        </div>
+        <div class="syn-stats__item">
+          <div class="syn-stats__num">80<em>+</em></div>
+          <div class="syn-stats__label">Vendor brands in portfolio</div>
+        </div>
+        <div class="syn-stats__item">
+          <div class="syn-stats__num" style="font-size:1rem;color:var(--syn-grey-text);font-weight:500;">[stat — confirm with client]</div>
+          <div class="syn-stats__label">Additional metric</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <section class="syn-solutions" id="solutions" aria-labelledby="syn-solutions-h2">
+    <div class="syn-container">
+      <div class="syn-solutions__header">
+        <span class="syn-section-label">Our portfolio</span>
+        <h2 id="syn-solutions-h2">Everything your clients need.<br />One distributor relationship.</h2>
+        <p>From cloud licences to endpoint hardware — Synnex carries the breadth to cover every deal your customers bring you.</p>
+      </div>
+
+      <div class="syn-solutions__grid">
+
+        <!-- Cloud -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--cloud" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 17H6a5 5 0 1 1 1.1-9.9 7 7 0 0 1 12.8 2.9A5 5 0 1 1 20 17z" stroke="#4285f4" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Cloud &amp; Software</h3>
+          <p class="syn-solution-card__desc">Microsoft 365, Azure, Google Workspace, and SaaS licencing through our CSP platform — with margin tools built in.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Security -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--security" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 3L4 7v6c0 5.25 3.85 10.15 9 11.35C18.15 23.15 22 18.25 22 13V7L13 3z" stroke="#e63329" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 13l3 3 5-5" stroke="#e63329" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Cybersecurity</h3>
+          <p class="syn-solution-card__desc">Endpoint, network, and identity security from Fortinet, Sophos, CrowdStrike, and 20+ specialist vendors.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Infrastructure -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--infra" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="20" height="5" rx="1.5" stroke="#43a047" stroke-width="1.8"/>
+              <rect x="3" y="12" width="20" height="5" rx="1.5" stroke="#43a047" stroke-width="1.8"/>
+              <circle cx="19" cy="7.5" r="1.2" fill="#43a047"/>
+              <circle cx="19" cy="14.5" r="1.2" fill="#43a047"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Infrastructure &amp; Servers</h3>
+          <p class="syn-solution-card__desc">HPE, Lenovo, and Dell servers, storage, and HCI — plus APC power and cooling for data centre builds.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Devices -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--devices" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="5" width="16" height="12" rx="2" stroke="#fb8c00" stroke-width="1.8"/>
+              <path d="M7 21h8M11 17v4" stroke="#fb8c00" stroke-width="1.8" stroke-linecap="round"/>
+              <rect x="21" y="9" width="3" height="6" rx="1" stroke="#fb8c00" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Devices &amp; Endpoints</h3>
+          <p class="syn-solution-card__desc">Commercial laptops, desktops, and tablets from HP, Lenovo, Samsung, and Apple — with volume pricing for fleet deals.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Networking -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--net" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13" cy="13" r="3" stroke="#7c3aed" stroke-width="1.8"/>
+              <circle cx="5" cy="7" r="2" stroke="#7c3aed" stroke-width="1.5"/>
+              <circle cx="21" cy="7" r="2" stroke="#7c3aed" stroke-width="1.5"/>
+              <circle cx="5" cy="20" r="2" stroke="#7c3aed" stroke-width="1.5"/>
+              <circle cx="21" cy="20" r="2" stroke="#7c3aed" stroke-width="1.5"/>
+              <path d="M7 8.5l4 3M19 8.5l-4 3M7 18.5l4-3M19 18.5l-4-3" stroke="#7c3aed" stroke-width="1.3"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Networking</h3>
+          <p class="syn-solution-card__desc">Cisco, Ubiquiti, Aruba, and Netgear switching, wireless, and SD-WAN for SMB and enterprise environments.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Print -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--print" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="7" y="14" width="12" height="8" rx="1.5" stroke="#0097a7" stroke-width="1.8"/>
+              <path d="M7 16H4V9a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v7h-3" stroke="#0097a7" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M9 5h8v3H9z" stroke="#0097a7" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Print &amp; Imaging</h3>
+          <p class="syn-solution-card__desc">HP, Epson, and Canon print hardware, managed print solutions, and consumables supply for ongoing margin.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Collaboration -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--collab" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="10" r="3" stroke="#e91e8c" stroke-width="1.8"/>
+              <circle cx="17" cy="10" r="3" stroke="#e91e8c" stroke-width="1.8"/>
+              <path d="M3 21a6 6 0 0 1 12 0" stroke="#e91e8c" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M17 16a6 6 0 0 1 6 5" stroke="#e91e8c" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Collaboration &amp; UC</h3>
+          <p class="syn-solution-card__desc">Video conferencing, Teams-certified devices, and Poly/Jabra peripherals for hybrid-work deployments.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+        <!-- Data / Analytics -->
+        <article class="syn-solution-card">
+          <div class="syn-solution-card__icon syn-solution-card__icon--data" aria-hidden="true">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 20V14M9 20V10M14 20V6M19 20V12" stroke="#8e24aa" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="syn-solution-card__title">Data &amp; Analytics</h3>
+          <p class="syn-solution-card__desc">Business intelligence, backup and disaster recovery, and storage solutions that give clients confidence in their data.</p>
+          <span class="syn-solution-card__link" aria-hidden="true">Learn more &#8594;</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Vendor Logo Strip -->
+  <section class="syn-vendors" id="vendors" aria-labelledby="syn-vendors-h2">
+    <div class="syn-container">
+      <div class="syn-vendors__header">
+        <span class="syn-section-label">Vendor partners</span>
+        <h2 id="syn-vendors-h2">80+ brands. One partner account.</h2>
+        <p>Access Australia's broadest vendor portfolio without managing multiple distributor relationships.</p>
+      </div>
+
+      <div class="syn-vendors__strip" role="list" aria-label="Vendor partner brands">
+        <div class="syn-vendor-badge syn-vendor-badge--hp" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> HP
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--lenovo" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Lenovo
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--microsoft" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Microsoft
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--cisco" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Cisco
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--apple" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Apple
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--dell" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Dell
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--samsung" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Samsung
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--apc" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> APC
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--logitech" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Logitech
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--asus" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> ASUS
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--vmware" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> VMware
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--fortinet" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Fortinet
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--google" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Google
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--amd" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> AMD
+        </div>
+        <div class="syn-vendor-badge syn-vendor-badge--intel" role="listitem">
+          <span class="syn-vendor-badge__dot" aria-hidden="true"></span> Intel
+        </div>
+      </div>
+
+      <p class="syn-vendors__more">
+        Plus 135+ more. <a href="#cta">Browse the full vendor catalogue &#8594;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="syn-proof" aria-labelledby="syn-proof-h2">
+    <div class="syn-container">
+      <div class="syn-proof__header">
+        <span class="syn-section-label">Partner stories</span>
+        <h2 id="syn-proof-h2">Why Australian channel partners<br />choose Synnex</h2>
+        <p>Hear from MSPs and resellers who've built their businesses on the Synnex relationship.</p>
+      </div>
+
+      <div class="syn-testimonials">
+
+        <article class="syn-testimonial">
+          <div class="syn-testimonial__quote-mark" aria-hidden="true">"</div>
+          <div class="syn-testimonial__stars" aria-label="5 out of 5 stars">
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+          </div>
+          <blockquote class="syn-testimonial__text">
+            "We moved our Microsoft and security lines to Synnex two years ago and haven't looked back. The CSP portal is genuinely fast, the pricing is competitive, and our account manager actually understands what an MSP needs — not just what a box-mover wants to sell. We've added four new vendor lines through Synnex since then because the process for bringing on new products is so low-friction."
+          </blockquote>
+          <div class="syn-testimonial__footer">
+            <div class="syn-testimonial__avatar syn-testimonial__avatar--a" aria-hidden="true">CD</div>
+            <div>
+              <div class="syn-testimonial__name">Channel Director</div>
+              <div class="syn-testimonial__meta">Melbourne-based MSP, 200+ staff</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="syn-testimonial">
+          <div class="syn-testimonial__quote-mark" aria-hidden="true">"</div>
+          <div class="syn-testimonial__stars" aria-label="5 out of 5 stars">
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+            <svg class="syn-testimonial__star" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="7,1 8.9,5.4 13.5,5.9 10.1,9 11.1,13.5 7,11 2.9,13.5 3.9,9 0.5,5.9 5.1,5.4" fill="#f5a623"/></svg>
+          </div>
+          <blockquote class="syn-testimonial__text">
+            "Our business does a lot of HP and Lenovo fleet replacements for mid-market clients — large orders with tight delivery windows. Synnex's logistics have never let us down on a committed delivery date, which matters enormously when you're coordinating a site rollout. The Gold partner pricing tier genuinely moves the margin needle on competitive bids. It's not just a label."
+          </blockquote>
+          <div class="syn-testimonial__footer">
+            <div class="syn-testimonial__avatar syn-testimonial__avatar--b" aria-hidden="true">PL</div>
+            <div>
+              <div class="syn-testimonial__name">Procurement Lead</div>
+              <div class="syn-testimonial__meta">Queensland IT reseller</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Accreditation Badges -->
+      <div class="syn-badges" role="list" aria-label="Awards and accreditations">
+
+        <div class="syn-badge" role="listitem">
+          <div class="syn-badge__icon syn-badge__icon--gold" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 2l2.4 5 5.6.6-4 4 1 5.6L11 14.5 6 17.2l1-5.6-4-4 5.6-.6L11 2z" stroke="#c9922a" stroke-width="1.6" stroke-linejoin="round" fill="rgba(201,146,42,0.15)"/>
+            </svg>
+          </div>
+          <div class="syn-badge__label">[Synnex award — confirm with client]</div>
+          <div class="syn-badge__sub">Placeholder — do not publish</div>
+        </div>
+
+        <div class="syn-badge" role="listitem">
+          <div class="syn-badge__icon syn-badge__icon--blue" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="11" r="8" stroke="#0078d4" stroke-width="1.6"/>
+              <path d="M8 11l2 2 4-4" stroke="#0078d4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="syn-badge__label">Microsoft Partner</div>
+          <div class="syn-badge__sub">Solutions Designations: Modern Work, Security</div>
+        </div>
+
+        <div class="syn-badge" role="listitem">
+          <div class="syn-badge__icon syn-badge__icon--green" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 2l2.4 5 5.6.6-4 4 1 5.6L11 14.5 6 17.2l1-5.6-4-4 5.6-.6L11 2z" stroke="#43a047" stroke-width="1.6" stroke-linejoin="round" fill="rgba(67,160,71,0.12)"/>
+            </svg>
+          </div>
+          <div class="syn-badge__label">[Synnex accreditation — confirm with client]</div>
+          <div class="syn-badge__sub">Placeholder — do not publish</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Tier Band -->
+  <section class="syn-tiers" id="tiers" aria-labelledby="syn-tiers-h2">
+    <div class="syn-container">
+      <div class="syn-tiers__header">
+        <span class="syn-section-label" style="color: rgba(255,255,255,0.45);">Partner program</span>
+        <h2 id="syn-tiers-h2">A tier structure that rewards<br />your growth</h2>
+        <p>Start where you are and grow into more margin, more support, and more opportunities.</p>
+      </div>
+
+      <div class="syn-tiers__grid">
+
+        <div class="syn-tier syn-tier--authorised">
+          <div class="syn-tier__badge">Authorised</div>
+          <div class="syn-tier__title">Get started</div>
+          <ul class="syn-tier__benefits" role="list">
+            <li class="syn-tier__benefit">Access to full product catalogue</li>
+            <li class="syn-tier__benefit">Online ordering via B2B portal</li>
+            <li class="syn-tier__benefit">Standard partner pricing</li>
+            <li class="syn-tier__benefit">Marketing resource library</li>
+          </ul>
+        </div>
+
+        <div class="syn-tier syn-tier--silver">
+          <div class="syn-tier__badge">Silver</div>
+          <div class="syn-tier__title">Build momentum</div>
+          <ul class="syn-tier__benefits" role="list">
+            <li class="syn-tier__benefit">Everything in Authorised</li>
+            <li class="syn-tier__benefit">Improved tier pricing</li>
+            <li class="syn-tier__benefit">Dedicated inside sales support</li>
+            <li class="syn-tier__benefit">Co-op marketing fund access</li>
+          </ul>
+        </div>
+
+        <div class="syn-tier syn-tier--gold">
+          <div class="syn-tier__badge">Gold</div>
+          <div class="syn-tier__title">Scale faster</div>
+          <ul class="syn-tier__benefits" role="list">
+            <li class="syn-tier__benefit">Everything in Silver</li>
+            <li class="syn-tier__benefit">Named account manager</li>
+            <li class="syn-tier__benefit">Pre-sales engineering support</li>
+            <li class="syn-tier__benefit">Priority deal registration</li>
+          </ul>
+        </div>
+
+        <div class="syn-tier syn-tier--platinum">
+          <div class="syn-tier__badge">Platinum</div>
+          <div class="syn-tier__title">Maximum advantage</div>
+          <ul class="syn-tier__benefits" role="list">
+            <li class="syn-tier__benefit">Everything in Gold</li>
+            <li class="syn-tier__benefit">Best-in-market pricing</li>
+            <li class="syn-tier__benefit">Executive sponsor relationship</li>
+            <li class="syn-tier__benefit">Joint go-to-market planning</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="syn-cta-band" id="cta" aria-labelledby="syn-cta-h2">
+    <div class="syn-container">
+      <div class="syn-cta-band__inner">
+        <span class="syn-cta-band__eyebrow">Ready when you are</span>
+        <h2 id="syn-cta-h2">Ready to grow your business<br />with Synnex?</h2>
+        <p class="syn-cta-band__sub">Partner onboarding takes less than 48 hours. One application, one account, access to everything.</p>
+        <div class="syn-cta-band__btns">
+          <a href="#" class="syn-btn syn-btn--white">Become a Partner</a>
+          <a href="#footer" class="syn-btn syn-btn--ghost-white">Talk to our team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="syn-footer" id="footer" role="contentinfo">
+    <div class="syn-container">
+      <div class="syn-footer__grid">
+
+        <div>
+          <div class="syn-footer__brand-logo">
+            <div class="syn-footer__brand-logo-mark" aria-hidden="true"></div>
+            <span class="syn-footer__brand-name">SYNNEX<span>.</span></span>
+          </div>
+          <p class="syn-footer__tagline">
+            Australia's leading ICT distributor — connecting channel partners with the technology brands and support they need to grow.
+          </p>
+          <address class="syn-footer__address">
+            2 Holker Street<br />
+            Newington NSW 2127<br />
+            Australia<br />
+            <br />
+            +61 2 9904 1333<br />
+            enquiries@synnex.com.au
+          </address>
+          <div class="syn-footer__socials" aria-label="Social media links">
+            <a href="#" class="syn-footer__social" aria-label="LinkedIn">in</a>
+            <a href="#" class="syn-footer__social" aria-label="Twitter">tw</a>
+            <a href="#" class="syn-footer__social" aria-label="Facebook">fb</a>
+            <a href="#" class="syn-footer__social" aria-label="YouTube">yt</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="syn-footer__col-title">Solutions</div>
+          <ul class="syn-footer__links" role="list">
+            <li><a href="#solutions">Cloud &amp; Software</a></li>
+            <li><a href="#solutions">Cybersecurity</a></li>
+            <li><a href="#solutions">Infrastructure &amp; Servers</a></li>
+            <li><a href="#solutions">Devices &amp; Endpoints</a></li>
+            <li><a href="#solutions">Networking</a></li>
+            <li><a href="#solutions">Print &amp; Imaging</a></li>
+            <li><a href="#solutions">Collaboration &amp; UC</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="syn-footer__col-title">Partners</div>
+          <ul class="syn-footer__links" role="list">
+            <li><a href="#tiers">Partner Program</a></li>
+            <li><a href="#tiers">Partner Tiers</a></li>
+            <li><a href="#cta">Become a Partner</a></li>
+            <li><a href="#vendors">Vendor Catalogue</a></li>
+            <li><a href="#">B2B Portal Login</a></li>
+            <li><a href="#">Deal Registration</a></li>
+            <li><a href="#">Training &amp; Enablement</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="syn-footer__col-title">Company</div>
+          <ul class="syn-footer__links" role="list">
+            <li><a href="#">About Synnex</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Supplier Code of Conduct</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="syn-footer__bottom">
+        <p class="syn-footer__bottom-legal">
+          &copy; 2026 Synnex Australia Pty Ltd. All rights reserved.
+        </p>
+        <p class="syn-footer__bottom-credit">
+          A concept by <a href="https://studioquarantine.com.au" target="_blank" rel="noopener">Studio Quarantine</a> &mdash; studioquarantine.com.au
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* Mobile nav */
+      var hamburger = document.getElementById('syn-hamburger');
+      var mobileNav = document.getElementById('syn-mobile-nav');
+      var navClose  = document.getElementById('syn-nav-close');
+      var overlay   = document.getElementById('syn-nav-overlay');
+      var drawer    = mobileNav ? mobileNav.querySelector('.syn-mobile-nav__drawer') : null;
+
+      function openNav() {
+        if (!mobileNav) return;
+        mobileNav.classList.add('is-open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        if (navClose) navClose.focus();
+      }
+
+      function closeNav() {
+        if (!mobileNav) return;
+        mobileNav.classList.remove('is-open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        if (hamburger) hamburger.focus();
+      }
+
+      if (hamburger) hamburger.addEventListener('click', openNav);
+      if (navClose)  navClose.addEventListener('click', closeNav);
+      if (overlay)   overlay.addEventListener('click', closeNav);
+
+      /* Close on nav link click */
+      var mobileLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', closeNav);
+      });
+
+      /* Escape key */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
+
+      /* Trap focus in drawer */
+      if (drawer) {
+        drawer.addEventListener('keydown', function (e) {
+          if (e.key !== 'Tab') return;
+          var focusable = drawer.querySelectorAll('button, a, [tabindex="0"]');
+          var first = focusable[0];
+          var last  = focusable[focusable.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+          } else {
+            if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+          }
+        });
+      }
+
+      /* Subtle stats counter animation on scroll */
+      var statsAnimated = false;
+
+      function animateStats() {
+        if (statsAnimated) return;
+        var statsSection = document.querySelector('.syn-stats');
+        if (!statsSection) return;
+        var rect = statsSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          statsAnimated = true;
+          var nums = document.querySelectorAll('.syn-stats__num');
+          nums.forEach(function (el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(8px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            setTimeout(function () {
+              el.style.opacity = '1';
+              el.style.transform = 'translateY(0)';
+            }, 80);
+          });
+        }
+      }
+
+      window.addEventListener('scroll', animateStats, { passive: true });
+      animateStats();
+
+    }());
+  </script>
+
+</body>
+</html>
